@@ -96,22 +96,19 @@
         "outbound": "direct"
       },
       {
-        "rule_set": "bilibili_domain",
-        "action": "route",
-        "outbound": "bilibili"
-      },
-      {
-        "rule_set": [
-          "netflix_ip",
-          "netflix_domain"
-        ],
-        "action": "route",
-        "outbound": "netflix"
-      },
-      {
         "rule_set": "youtube_domain",
         "action": "route",
         "outbound": "youtube"
+      },
+      {
+        "rule_set": "twitter_domain",
+        "action": "route",
+        "outbound": "twitter"
+      },
+      {
+        "rule_set": "github_domain",
+        "action": "route",
+        "outbound": "github"
       },
       {
         "rule_set": "openai_domain",
@@ -131,8 +128,7 @@
               "cn_domain",
               "apple_domain",
               "google_domain",
-              "telegram_domain",
-              "netflix_domain"
+              "telegram_domain"
             ]
           }
         ],
@@ -191,13 +187,6 @@
         "download_detour": "direct"
       },
       {
-        "tag": "bilibili_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geosite/bilibili.srs",
-        "download_detour": "direct"
-      },
-      {
         "tag": "cn_ip",
         "type": "remote",
         "format": "binary",
@@ -212,6 +201,13 @@
         "download_detour": "direct"
       },
       {
+        "tag": "youtube_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geosite/youtube.srs",
+        "download_detour": "direct"
+      },
+      {
         "tag": "google_ip",
         "type": "remote",
         "format": "binary",
@@ -223,20 +219,6 @@
         "type": "remote",
         "format": "binary",
         "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geosite/google.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "netflix_ip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geoip/netflix.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "netflix_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geosite/netflix.srs",
         "download_detour": "direct"
       },
       {
@@ -268,10 +250,17 @@
         "download_detour": "direct"
       },
       {
-        "tag": "youtube_domain",
+        "tag": "twitter_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geosite/youtube.srs",
+        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geosite/twitter.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "github_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geosite/github.srs",
         "download_detour": "direct"
       }
     ],
@@ -283,16 +272,8 @@
       "tag": "proxy",
       "type": "selector",
       "outbounds": [
-        "hk",
-        "hk-auto",
-        "tw",
-        "tw-auto",
         "jp",
         "jp-auto",
-        "kr",
-        "kr-auto",
-        "sg",
-        "sg-auto",
         "us",
         "us-auto",
         "all",
@@ -302,21 +283,28 @@
       "default": "all-auto"
     },
     {
+      "tag": "youtube",
+      "type": "selector",
+      "outbounds": [
+        "proxy",
+        "direct",
+        "jp",
+        "jp-auto",
+        "us",
+        "us-auto",
+        "all",
+        "all-auto"
+      ],
+      "default": "proxy"
+    },
+    {
       "tag": "google",
       "type": "selector",
       "outbounds": [
         "proxy",
         "direct",
-        "hk",
-        "hk-auto",
-        "tw",
-        "tw-auto",
         "jp",
         "jp-auto",
-        "kr",
-        "kr-auto",
-        "sg",
-        "sg-auto",
         "us",
         "us-auto",
         "all",
@@ -330,16 +318,8 @@
       "outbounds": [
         "proxy",
         "direct",
-        "hk",
-        "hk-auto",
-        "tw",
-        "tw-auto",
         "jp",
         "jp-auto",
-        "kr",
-        "kr-auto",
-        "sg",
-        "sg-auto",
         "us",
         "us-auto",
         "all",
@@ -353,16 +333,8 @@
       "outbounds": [
         "proxy",
         "direct",
-        "hk",
-        "hk-auto",
-        "tw",
-        "tw-auto",
         "jp",
         "jp-auto",
-        "kr",
-        "kr-auto",
-        "sg",
-        "sg-auto",
         "us",
         "us-auto",
         "all",
@@ -371,44 +343,13 @@
       "default": "proxy"
     },
     {
-      "tag": "bilibili",
+      "tag": "twitter",
       "type": "selector",
       "outbounds": [
         "proxy",
         "direct",
-        "hk",
-        "hk-auto",
-        "tw",
-        "tw-auto",
         "jp",
         "jp-auto",
-        "kr",
-        "kr-auto",
-        "sg",
-        "sg-auto",
-        "us",
-        "us-auto",
-        "all",
-        "all-auto"
-      ],
-      "default": "direct"
-    },
-    {
-      "tag": "netflix",
-      "type": "selector",
-      "outbounds": [
-        "proxy",
-        "direct",
-        "hk",
-        "hk-auto",
-        "tw",
-        "tw-auto",
-        "jp",
-        "jp-auto",
-        "kr",
-        "kr-auto",
-        "sg",
-        "sg-auto",
         "us",
         "us-auto",
         "all",
@@ -417,21 +358,13 @@
       "default": "proxy"
     },
     {
-      "tag": "youtube",
+      "tag": "github",
       "type": "selector",
       "outbounds": [
         "proxy",
         "direct",
-        "hk",
-        "hk-auto",
-        "tw",
-        "tw-auto",
         "jp",
         "jp-auto",
-        "kr",
-        "kr-auto",
-        "sg",
-        "sg-auto",
         "us",
         "us-auto",
         "all",
@@ -445,16 +378,8 @@
       "outbounds": [
         "proxy",
         "direct",
-        "hk",
-        "hk-auto",
-        "tw",
-        "tw-auto",
         "jp",
         "jp-auto",
-        "kr",
-        "kr-auto",
-        "sg",
-        "sg-auto",
         "us",
         "us-auto",
         "all",
@@ -468,16 +393,8 @@
       "outbounds": [
         "proxy",
         "direct",
-        "hk",
-        "hk-auto",
-        "tw",
-        "tw-auto",
         "jp",
         "jp-auto",
-        "kr",
-        "kr-auto",
-        "sg",
-        "sg-auto",
         "us",
         "us-auto",
         "all",
@@ -491,16 +408,8 @@
       "outbounds": [
         "proxy",
         "direct",
-        "hk",
-        "hk-auto",
-        "tw",
-        "tw-auto",
         "jp",
         "jp-auto",
-        "kr",
-        "kr-auto",
-        "sg",
-        "sg-auto",
         "us",
         "us-auto",
         "all",
@@ -509,27 +418,7 @@
       "default": "proxy"
     },
     {
-      "tag": "hk",
-      "type": "selector",
-      "outbounds": []
-    },
-    {
-      "tag": "tw",
-      "type": "selector",
-      "outbounds": []
-    },
-    {
       "tag": "jp",
-      "type": "selector",
-      "outbounds": []
-    },
-    {
-      "tag": "kr",
-      "type": "selector",
-      "outbounds": []
-    },
-    {
-      "tag": "sg",
       "type": "selector",
       "outbounds": []
     },
@@ -544,39 +433,7 @@
       "outbounds": []
     },
     {
-      "tag": "hk-auto",
-      "type": "urltest",
-      "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "1m",
-      "tolerance": 50
-    },
-    {
-      "tag": "tw-auto",
-      "type": "urltest",
-      "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "1m",
-      "tolerance": 50
-    },
-    {
       "tag": "jp-auto",
-      "type": "urltest",
-      "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "1m",
-      "tolerance": 50
-    },
-    {
-      "tag": "kr-auto",
-      "type": "urltest",
-      "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "1m",
-      "tolerance": 50
-    },
-    {
-      "tag": "sg-auto",
       "type": "urltest",
       "outbounds": [],
       "url": "https://www.gstatic.com/generate_204",
@@ -605,16 +462,8 @@
       "outbounds": [
         "direct",
         "proxy",
-        "hk",
-        "hk-auto",
-        "tw",
-        "tw-auto",
         "jp",
         "jp-auto",
-        "kr",
-        "kr-auto",
-        "sg",
-        "sg-auto",
         "us",
         "us-auto",
         "all",
