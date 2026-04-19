@@ -81,6 +81,11 @@
         "action": "hijack-dns"
       },
       {
+        "preferred_by": "tailscale",
+        "action": "route",
+        "outbound": "ts-ep"
+      },
+      {
         "ip_is_private": true,
         "action": "route",
         "outbound": "direct"
@@ -267,6 +272,17 @@
     "final": "final",
     "auto_detect_interface": true
   },
+  "endpoints": [
+    {
+      "type": "tailscale",
+      "tag": "ts-ep",
+      "state_directory": "tailscale",
+      "hostname": "sb-android",
+      "auth_key": "",
+      "accept_routes": true,
+      "udp_timeout": "5m"
+    }
+  ],
   "outbounds": [
     {
       "tag": "proxy",
@@ -460,6 +476,7 @@
       "tag": "GLOBAL",
       "type": "selector",
       "outbounds": [
+        "ts-ep",
         "direct",
         "proxy",
         "jp",
