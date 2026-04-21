@@ -13,6 +13,11 @@
         "server": "223.5.5.5"
       },
       {
+        "type": "tailscale",
+        "tag": "ts-dns",
+        "endpoint": "ts-ep"
+      },
+      {
         "tag": "fakeip",
         "type": "fakeip",
         "inet4_range": "198.18.0.0/15",
@@ -20,6 +25,11 @@
       }
     ],
     "rules": [
+      {
+        "domain_suffix": ".ts.net",
+        "action": "route",
+        "server": "ts-dns"
+      },
       {
         "clash_mode": "Direct",
         "action": "route",
@@ -69,11 +79,6 @@
       },
       {
         "ip_cidr": "100.64.0.0/10",
-        "action": "route",
-        "outbound": "ts-ep"
-      },
-      {
-        "ip_cidr": "192.168.100.0/24",
         "action": "route",
         "outbound": "ts-ep"
       },
@@ -283,7 +288,8 @@
       "tag": "ts-ep",
       "state_directory": "tailscale",
       "hostname": "iphone",
-      "auth_key": "",
+      "auth_key": "my-secret-auth",
+      "detour": "direct",
       "accept_routes": true,
       "udp_timeout": "5m"
     }
@@ -481,7 +487,6 @@
       "tag": "GLOBAL",
       "type": "selector",
       "outbounds": [
-        "ts-ep",
         "direct",
         "proxy",
         "jp",
