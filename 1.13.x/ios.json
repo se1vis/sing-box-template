@@ -68,6 +68,16 @@
         "timeout": "500ms"
       },
       {
+        "ip_cidr": "100.64.0.0/10",
+        "action": "route",
+        "outbound": "ts-ep"
+      },
+      {
+        "ip_cidr": "192.168.100.0/24",
+        "action": "route",
+        "outbound": "ts-ep"
+      },
+      {
         "type": "logical",
         "mode": "or",
         "rules": [
@@ -79,11 +89,6 @@
           }
         ],
         "action": "hijack-dns"
-      },
-      {
-        "preferred_by": "tailscale",
-        "action": "route",
-        "outbound": "ts-ep"
       },
       {
         "ip_is_private": true,
@@ -277,7 +282,7 @@
       "type": "tailscale",
       "tag": "ts-ep",
       "state_directory": "tailscale",
-      "hostname": "sb-android",
+      "hostname": "iphone",
       "auth_key": "",
       "accept_routes": true,
       "udp_timeout": "5m"
