@@ -277,11 +277,11 @@
       "type": "tailscale",
       "tag": "ts-ep",
       "state_directory": "tailscale",
-      "hostname": "sb-desktop",
+      "hostname": "desktop",
       "auth_key": "",
       "accept_routes": true,
       "advertise_routes": [
-        "192.168.1.0/24"
+        "192.168.0.0/24"
       ],
       "udp_timeout": "5m"
     }
