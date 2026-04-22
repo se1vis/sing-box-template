@@ -73,9 +73,9 @@
         "outbound": "ts-ep"
       },
       {
-        "ip_cidr": "192.168.100.0/24",
+        "ip_cidr": "192.168.0.0/24",
         "action": "route",
-        "outbound": "ts-ep"
+        "outbound": "direct"
       },
       {
         "type": "logical",
@@ -294,11 +294,11 @@
       "type": "tailscale",
       "tag": "ts-ep",
       "state_directory": "tailscale",
-      "hostname": "sb-momo",
+      "hostname": "op-momo",
       "auth_key": "",
       "accept_routes": true,
       "advertise_routes": [
-        "192.168.100.0/24"
+        "192.168.0.0/24"
       ],
       "udp_timeout": "5m"
     }
