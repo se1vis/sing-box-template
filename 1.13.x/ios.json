@@ -13,11 +13,6 @@
         "server": "223.5.5.5"
       },
       {
-        "type": "tailscale",
-        "tag": "ts-dns",
-        "endpoint": "ts-ep"
-      },
-      {
         "tag": "fakeip",
         "type": "fakeip",
         "inet4_range": "198.18.0.0/15",
@@ -25,11 +20,6 @@
       }
     ],
     "rules": [
-      {
-        "domain_suffix": ".ts.net",
-        "action": "route",
-        "server": "ts-dns"
-      },
       {
         "clash_mode": "Direct",
         "action": "route",
@@ -81,6 +71,11 @@
         "ip_cidr": "100.64.0.0/10",
         "action": "route",
         "outbound": "ts-ep"
+      },
+      {
+        "ip_cidr": "192.168.100.0/24",
+        "action": "route",
+        "outbound": "direct"
       },
       {
         "type": "logical",
@@ -289,7 +284,6 @@
       "state_directory": "tailscale",
       "hostname": "iphone",
       "auth_key": "my-secret-auth",
-      "detour": "direct",
       "accept_routes": true,
       "udp_timeout": "5m"
     }
@@ -299,11 +293,6 @@
       "tag": "proxy",
       "type": "selector",
       "outbounds": [
-        "jp",
-        "jp-auto",
-        "us",
-        "us-auto",
-        "all",
         "all-auto",
         "direct"
       ],
@@ -313,31 +302,21 @@
       "tag": "youtube",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
         "jp-auto",
-        "us",
         "us-auto",
-        "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "jp-auto"
     },
     {
       "tag": "google",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
         "jp-auto",
-        "us",
         "us-auto",
-        "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "us-auto"
     },
     {
       "tag": "apple",
@@ -345,11 +324,6 @@
       "outbounds": [
         "proxy",
         "direct",
-        "jp",
-        "jp-auto",
-        "us",
-        "us-auto",
-        "all",
         "all-auto"
       ],
       "default": "direct"
@@ -358,74 +332,56 @@
       "tag": "telegram",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
         "jp-auto",
-        "us",
         "us-auto",
-        "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "us-auto"
     },
     {
       "tag": "twitter",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
         "jp-auto",
-        "us",
         "us-auto",
-        "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "us-auto"
     },
     {
       "tag": "github",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
-        "jp-auto",
-        "us",
         "us-auto",
-        "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "us-auto"
+    },
+    {
+      "tag": "paypal",
+      "type": "selector",
+      "outbounds": [
+        "us",
+        "us-auto"
+      ],
+      "default": "us-auto"
     },
     {
       "tag": "openai",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
-        "jp-auto",
         "us",
         "us-auto",
-        "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "us-auto"
     },
     {
       "tag": "cn",
       "type": "selector",
       "outbounds": [
         "proxy",
-        "direct",
-        "jp",
-        "jp-auto",
-        "us",
-        "us-auto",
-        "all",
-        "all-auto"
+        "direct"
       ],
       "default": "direct"
     },
@@ -435,11 +391,6 @@
       "outbounds": [
         "proxy",
         "direct",
-        "jp",
-        "jp-auto",
-        "us",
-        "us-auto",
-        "all",
         "all-auto"
       ],
       "default": "proxy"

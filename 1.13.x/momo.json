@@ -318,61 +318,39 @@
       "tag": "youtube",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
         "jp",
         "jp-auto",
-        "us",
-        "us-auto",
-        "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "jp-auto"
     },
     {
       "tag": "github",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
         "jp-auto",
-        "us",
         "us-auto",
-        "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "us-auto"
     },
     {
       "tag": "paypal",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
-        "jp-auto",
         "us",
-        "us-auto",
-        "all",
-        "all-auto"
+        "us-auto"
       ],
-      "default": "proxy"
+      "default": "us-auto"
     },
     {
       "tag": "google",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
-        "jp-auto",
-        "us",
         "us-auto",
-        "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "us-auto"
     },
     {
       "tag": "apple",
@@ -380,11 +358,6 @@
       "outbounds": [
         "proxy",
         "direct",
-        "jp",
-        "jp-auto",
-        "us",
-        "us-auto",
-        "all",
         "all-auto"
       ],
       "default": "direct"
@@ -393,46 +366,30 @@
       "tag": "telegram",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
         "jp-auto",
-        "us",
         "us-auto",
-        "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "us-auto"
     },
     {
       "tag": "twitter",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
-        "jp-auto",
         "us",
         "us-auto",
-        "all",
         "all-auto"
       ],
-      "default": "proxy"
+      "default": "us-auto"
     },
     {
       "tag": "ai",
       "type": "selector",
       "outbounds": [
-        "proxy",
-        "direct",
-        "jp",
-        "jp-auto",
         "us",
-        "us-auto",
-        "all",
-        "all-auto"
+        "us-auto"
       ],
-      "default": "proxy"
+      "default": "us-auto"
     },
     {
       "tag": "cn",
@@ -440,11 +397,6 @@
       "outbounds": [
         "proxy",
         "direct",
-        "jp",
-        "jp-auto",
-        "us",
-        "us-auto",
-        "all",
         "all-auto"
       ],
       "default": "direct"
@@ -455,11 +407,6 @@
       "outbounds": [
         "proxy",
         "direct",
-        "jp",
-        "jp-auto",
-        "us",
-        "us-auto",
-        "all",
         "all-auto"
       ],
       "default": "proxy"
@@ -510,11 +457,6 @@
         "ts-ep",
         "direct",
         "proxy",
-        "jp",
-        "jp-auto",
-        "us",
-        "us-auto",
-        "all",
         "all-auto"
       ],
       "default": "direct"
