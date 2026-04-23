@@ -13,13 +13,23 @@
         "server": "223.5.5.5"
       },
       {
+        "type": "tailscale",
+        "tag": "ts-dns",
+        "endpoint": "ts-ep"
+      },
+      {
         "tag": "fakeip",
         "type": "fakeip",
         "inet4_range": "198.18.0.0/15",
         "inet6_range": "fc00::/18"
       }
     ],
-    "rules": [
+    "rules": 
+      {
+        "domain_suffix": ".ts.net",
+        "action": "route",
+        "server": "ts-dns"
+      },
       {
         "clash_mode": "Direct",
         "action": "route",
@@ -75,7 +85,7 @@
       {
         "ip_cidr": "192.168.100.0/24",
         "action": "route",
-        "outbound": "direct"
+        "outbound": "ts-ep"
       },
       {
         "type": "logical",
