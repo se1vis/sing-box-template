@@ -73,7 +73,7 @@
         "outbound": "ts-ep"
       },
       {
-        "ip_cidr": "192.168.0.0/24",
+        "ip_cidr": "192.168.100.0/24",
         "action": "route",
         "outbound": "direct"
       },
@@ -293,12 +293,12 @@
     {
       "type": "tailscale",
       "tag": "ts-ep",
-      "state_directory": "tailscale",
+      "state_directory": "$HOME/.tailscale",
       "hostname": "op-momo",
       "auth_key": "",
       "accept_routes": true,
       "advertise_routes": [
-        "192.168.0.0/24"
+        "192.168.100.0/24"
       ],
       "udp_timeout": "5m"
     }
@@ -308,10 +308,6 @@
       "tag": "proxy",
       "type": "selector",
       "outbounds": [
-        "jp",
-        "jp-auto",
-        "us",
-        "us-auto",
         "all",
         "all-auto",
         "direct"
