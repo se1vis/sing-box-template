@@ -68,7 +68,7 @@
         "timeout": "500ms"
       },
       {
-        "ip_cidr": "100.64.0.0/10",
+        "ip_cidr": "100.0.0.0/10",
         "action": "route",
         "outbound": "ts-ep"
       },
