@@ -68,7 +68,7 @@
         "timeout": "500ms"
       },
       {
-        "ip_cidr": "100.64.0.0/10",
+        "ip_cidr": "100.0.0.0/10",
         "action": "route",
         "outbound": "ts-ep"
       },
@@ -119,6 +119,11 @@
         "rule_set": "github_domain",
         "action": "route",
         "outbound": "github"
+      },
+      {
+        "rule_set": "paypal_domain",
+        "action": "route",
+        "outbound": "paypal"
       },
       {
         "rule_set": "openai_domain",
@@ -271,6 +276,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geosite/github.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "paypal_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://ghfast.top/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/paypal.srs",
         "download_detour": "direct"
       }
     ],
@@ -440,11 +452,6 @@
       "outbounds": [
         "direct",
         "proxy",
-        "jp",
-        "jp-auto",
-        "us",
-        "us-auto",
-        "all",
         "all-auto"
       ],
       "default": "direct"
