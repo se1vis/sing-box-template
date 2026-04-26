@@ -57,8 +57,7 @@
         "rule_set": "cn_domain",
         "action": "route",
         "server": "ali"
-      }
-    ],
+      },
     "final": "google",
     "independent_cache": true
   },
