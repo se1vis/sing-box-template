@@ -24,7 +24,7 @@
         "inet6_range": "fc00::/18"
       }
     ],
-    "rules": 
+    "rules": [
       {
         "domain_suffix": ".ts.net",
         "action": "route",
@@ -57,7 +57,8 @@
         "rule_set": "cn_domain",
         "action": "route",
         "server": "ali"
-      },
+      }
+    ],
     "final": "google",
     "independent_cache": true
   },
